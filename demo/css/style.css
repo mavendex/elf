@@ -1,13 +1,22 @@
 @import 'reset.css';
 * {
-  background: rgba(0,0,0,0.1);
+  background: rgba(0,0,255,0.1);
 }
 div {
   float: left;
-  width: calc(100% * 1 / 7 - 30px + 1 / 7 * 30px);
+  width: calc(100% * 0.333333333333333 - 30px + 0.333333333333333 * 30px);
   margin-right: 30px;
 }
-div:nth-child(7n),
+div:nth-child(3n),
 div:last-child {
+  margin-right: 0;
+}
+div div {
+  float: left;
+  width: calc(100% * 0.5 - 30px + 0.5 * 30px);
+  margin-right: 30px;
+}
+div div:nth-child(0n),
+div div:last-child {
   margin-right: 0;
 }
