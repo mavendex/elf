@@ -1,16 +1,37 @@
 @import 'reset.css'
 
-*
-  background: rgba(blue, 10%)
+debug()
+  *
+    background: rgba(blue, 10%)
 
-col(ratio = 1, cycle = 0, gutter = 30px)
+column(ratio = 1, gutter = 30px)
   float: left
   width: s('calc(100% * %s - %s + %s * %s)', ratio, gutter, ratio, gutter)
   margin-right: gutter
-  &:nth-child({cycle}n), &:last-child
+  &:last-child
     margin-right: 0
 
-div
-  col(1/3, 3)
-  div
-    col(1/2)
+cycle(item = 0)
+  &:nth-child({item}n)
+    margin-right: 0
+
+offset(ratio = 0, gutter = 30px)
+  if ratio > 0
+    margin-left: s('calc(100% * %s + %s * %s)', ratio, ratio, gutter)
+
+span(ratio = 1)
+  float: left
+  width: s('calc(100% * %s)', ratio)
+
+
+debug()
+
+html
+  padding: 3rem
+
+.thirds
+  > div
+    column(1/3)
+.halves
+  > div
+    column(1/2)
