@@ -7,14 +7,6 @@ html
   padding: 3rem
 
 aside
-  span(1/3)
-  shift(2/3, span)
-  background: red
-  @media (max-width: 700px)
-    unshift()
+  column(1/3)
 main
-  span(2/3)
-  shift(-1/3, span)
-  background: green
-  @media (max-width: 700px)
-    unshift()
+  column(2/3)

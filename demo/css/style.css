@@ -7,27 +7,17 @@ html {
 }
 aside {
   float: left;
-  width: calc(100% * 0.333333333333333);
-  position: relative;
-  left: calc(100% * 0.666666666666667);
-  background: #f00;
+  width: calc(100% * 0.333333333333333 - 30px + 0.333333333333333 * 30px);
+  margin-right: 30px;
 }
-@media (max-width: 700px) {
-  aside {
-    position: static;
-    left: 0;
-  }
+aside:last-child {
+  margin-right: 0;
 }
 main {
   float: left;
-  width: calc(100% * 0.666666666666667);
-  position: relative;
-  left: calc(100% * -0.333333333333333);
-  background: #008000;
+  width: calc(100% * 0.666666666666667 - 30px + 0.666666666666667 * 30px);
+  margin-right: 30px;
 }
-@media (max-width: 700px) {
-  main {
-    position: static;
-    left: 0;
-  }
+main:last-child {
+  margin-right: 0;
 }

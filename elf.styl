@@ -1,36 +1,72 @@
-debug()
-  *
-    background: rgba(blue, 10%)
+// Settings
+gutter = 30px
 
-column(ratio = 1, gutter = 30px)
+
+/**
+ * Enable debugging environment that applies a translucent background to every element on the page.
+ * @param {string} [color=blue] - The color to be lightened in the debugging environment.
+ */
+debug(color = blue)
+  *
+    background: rgba(color, 10%)
+
+/**
+ * Set an element's width and margin-right gutter by ratio.
+ * @param {number} [ratio=1] - A width relative to its container as a fraction.
+ * @param {number} [_gutter=gutter] - Specify the gutter width as any unit.
+ */
+column(ratio = 1, _gutter = gutter)
   float: left
-  width: s('calc(100% * %s - %s + %s * %s)', ratio, gutter, ratio, gutter)
-  margin-right: gutter
+  width: s('calc(100% * %s - %s + %s * %s)', ratio, _gutter, ratio, _gutter)
+  margin-right: _gutter
   &:last-child
     margin-right: 0
 
+/**
+ * Make elements automatically drop down a row when the specified item is reached.
+ * @param {number} [item=0] - Item to be the last in the row.
+ */
 cycle(item = 0)
   &:nth-child({item}n)
     margin-right: 0
 
-offset(ratio = 0, gutter = 30px)
+/**
+ * Offset elements from one another.
+ * @param {number} [ratio=0] - Fraction to be used to offset.
+ * @param {string} [column-or-span=column] - Are you offsetting a column or a span element?
+ * @param {number} [_gutter=gutter] - Specify the gutter width as any unit.
+ */
+offset(ratio = 0, column-or-span = column, _gutter = gutter)
   if ratio > 0
-    margin-left: s('calc(100% * %s + %s * %s)', ratio, ratio, gutter)
+    margin-left: s('calc(100% * %s + %s * %s)', ratio, ratio, _gutter)
 
+/**
+ * Set an element's width as a fraction.
+ * @param {number} [ratio=1] - A width relative to its container as a fraction.
+ */
 span(ratio = 1)
   float: left
   width: s('calc(100% * %s)', ratio)
 
-shift(ratio = 1, column-or-span = column, gutter = 30px)
+/**
+ * Useful for source ordering. Shift elements to the left and right with positive and negative integers.
+ * @param {number} [ratio=0] - Fraction to be used in the shift.
+ * @param {string} [column-or-span=column] - Are you shifting a column or a span element?
+ * @param {number} [_gutter=gutter] - Specify the gutter width as any unit.
+ */
+shift(ratio = 1, column-or-span = column, _gutter = gutter)
   position: relative
 
   if column-or-span is column
-    translate = s('calc(100% * %s + %s * %s)', ratio, ratio, gutter)
+    translate = s('calc(100% * %s + %s * %s)', ratio, ratio, _gutter)
   else
     translate = s('calc(100% * %s)', ratio)
 
   left: translate
 
+/**
+ * Useful for source ordering. Removes affects applied by shift()
+ */
 unshift()
   position: static
   left: 0
