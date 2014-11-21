@@ -1,0 +1,13 @@
+@import 'reset.css';
+* {
+  background: rgba(0,0,0,0.1);
+}
+div {
+  float: left;
+  width: calc(100% * 1 / 7 - 30px + 1 / 7 * 30px);
+  margin-right: 30px;
+}
+div:nth-child(7n),
+div:last-child {
+  margin-right: 0;
+}
