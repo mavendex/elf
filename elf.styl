@@ -1,6 +1,22 @@
 // Settings
-gutter = 30px
+elf = {
+  gutter: 30px
+  content-direction: 'LTR'
+}
 
+/**
+ * Return the configured layout direction for floats etc.
+ * @return {string} result - The direction in left/right format.
+ */
+elf-get-layout-direction()
+  elf.content-direction == LTR ? result = left : result = right
+  return result
+
+/**
+ * Set up the layout direction.
+ */
+direction = elf-get-layout-direction()
+opposite = opposite-position(direction)
 
 /**
  * Enable debugging environment that applies a translucent background to every element on the page.
@@ -13,14 +29,14 @@ debug(color = blue)
 /**
  * Set an element's width and margin-right gutter by ratio.
  * @param {number} [ratio=1] - A width relative to its container as a fraction.
- * @param {string} [_gutter=gutter] - Specify the gutter width as any unit.
+ * @param {string} [gutter=elf.gutter] - Specify the gutter width as any unit.
  */
-column(ratio = 1, _gutter = gutter)
-  float: left
-  width: s('calc(100% * %s - %s + %s * %s)', ratio, _gutter, ratio, _gutter)
-  margin-right: _gutter
+column(ratio = 1, gutter = elf.gutter)
+  float: direction
+  width: s('calc(100% * %s - %s + %s * %s)', ratio, gutter, ratio, gutter)
+  margin-{opposite}: gutter
   &:last-child
-    margin-right: 0
+    margin-{opposite}: 0
 
 /**
  * Make elements automatically drop down a row when the specified item is reached.
@@ -28,19 +44,19 @@ column(ratio = 1, _gutter = gutter)
  */
 cycle(item = 0)
   &:nth-child({item}n)
-    margin-right: 0
+    margin-{opposite}: 0
 
 /**
  * Offset elements from one another.
  * @param {number} [ratio=0] - Fraction to be used to offset.
  * @param {string} [column-or-span=column] - Are you offsetting a column or a span element?
- * @param {string} [_gutter=gutter] - Specify the gutter width as any unit.
+ * @param {string} [gutter=elf.gutter] - Specify the gutter width as any unit.
  */
-offset(ratio = 0, column-or-span = column, _gutter = gutter)
+offset(ratio = 0, column-or-span = column, gutter = elf.gutter)
   if ratio > 0
-    margin-left: s('calc(100% * %s + %s * %s)', ratio, ratio, _gutter)
+    margin-{direction}: s('calc(100% * %s + %s * %s)', ratio, ratio, gutter)
   else
-    margin-right: s('calc(-100% * %s - %s * %s + %s)', ratio, ratio, _gutter, _gutter)
+    margin-{opposite}: s('calc(-100% * %s - %s * %s + %s)', ratio, ratio, gutter, gutter)
 
 
 /**
@@ -48,28 +64,28 @@ offset(ratio = 0, column-or-span = column, _gutter = gutter)
  * @param {number} [ratio=1] - A width relative to its container as a fraction.
  */
 span(ratio = 1)
-  float: left
+  float: direction
   width: s('calc(100% * %s)', ratio)
 
 /**
  * Useful for source ordering. Shift elements to the left and right with positive and negative integers.
  * @param {number} [ratio=0] - Fraction to be used in the shift.
  * @param {string} [column-or-span=column] - Are you shifting a column or a span element?
- * @param {string} [_gutter=gutter] - Specify the gutter width as any unit.
+ * @param {string} [gutter=elf.gutter] - Specify the gutter width as any unit.
  */
-shift(ratio = 1, column-or-span = column, _gutter = gutter)
+shift(ratio = 1, column-or-span = column, gutter = elf.gutter)
   position: relative
 
   if column-or-span is column
-    translate = s('calc(100% * %s + %s * %s)', ratio, ratio, _gutter)
+    translate = s('calc(100% * %s + %s * %s)', ratio, ratio, gutter)
   else
     translate = s('calc(100% * %s)', ratio)
 
-  left: translate
+  {direction}: translate
 
 /**
  * Useful for source ordering. Removes affects applied by shift()
  */
 unshift()
   position: static
-  left: 0
+  {direction}: 0
