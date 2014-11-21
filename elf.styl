@@ -39,6 +39,9 @@ cycle(item = 0)
 offset(ratio = 0, column-or-span = column, _gutter = gutter)
   if ratio > 0
     margin-left: s('calc(100% * %s + %s * %s)', ratio, ratio, _gutter)
+  else
+    margin-right: s('calc(-100% * %s - %s * %s + %s)', ratio, ratio, _gutter, _gutter)
+
 
 /**
  * Set an element's width as a fraction.

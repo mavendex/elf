@@ -10,9 +10,12 @@ section {
 }
 section div {
   float: left;
-  width: calc(100% * 0.333333333333333 - 30px + 0.333333333333333 * 30px);
+  width: calc(100% * 0.25 - 30px + 0.25 * 30px);
   margin-right: 30px;
 }
 section div:last-child {
   margin-right: 0;
+}
+section div:nth-child(1) {
+  margin-right: calc(-100% * -0.25 - -0.25 * 30px + 30px);
 }
