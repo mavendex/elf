@@ -20,3 +20,17 @@ offset(ratio = 0, gutter = 30px)
 span(ratio = 1)
   float: left
   width: s('calc(100% * %s)', ratio)
+
+shift(ratio = 1, column-or-span = column, gutter = 30px)
+  position: relative
+
+  if column-or-span is column
+    translate = s('calc(100% * %s + %s * %s)', ratio, ratio, gutter)
+  else
+    translate = s('calc(100% * %s)', ratio)
+
+  left: translate
+
+unshift()
+  position: static
+  left: 0

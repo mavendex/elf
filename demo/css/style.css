@@ -5,19 +5,29 @@
 html {
   padding: 3rem;
 }
-.thirds > div {
+aside {
   float: left;
-  width: calc(100% * 0.333333333333333 - 30px + 0.333333333333333 * 30px);
-  margin-right: 30px;
+  width: calc(100% * 0.333333333333333);
+  position: relative;
+  left: calc(100% * 0.666666666666667);
+  background: #f00;
 }
-.thirds > div:last-child {
-  margin-right: 0;
+@media (max-width: 700px) {
+  aside {
+    position: static;
+    left: 0;
+  }
 }
-.halves > div {
+main {
   float: left;
-  width: calc(100% * 0.5 - 30px + 0.5 * 30px);
-  margin-right: 30px;
+  width: calc(100% * 0.666666666666667);
+  position: relative;
+  left: calc(100% * -0.333333333333333);
+  background: #008000;
 }
-.halves > div:last-child {
-  margin-right: 0;
+@media (max-width: 700px) {
+  main {
+    position: static;
+    left: 0;
+  }
 }
