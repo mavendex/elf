@@ -1,0 +1,22 @@
+debug()
+  *
+    background: rgba(blue, 10%)
+
+column(ratio = 1, gutter = 30px)
+  float: left
+  width: s('calc(100% * %s - %s + %s * %s)', ratio, gutter, ratio, gutter)
+  margin-right: gutter
+  &:last-child
+    margin-right: 0
+
+cycle(item = 0)
+  &:nth-child({item}n)
+    margin-right: 0
+
+offset(ratio = 0, gutter = 30px)
+  if ratio > 0
+    margin-left: s('calc(100% * %s + %s * %s)', ratio, ratio, gutter)
+
+span(ratio = 1)
+  float: left
+  width: s('calc(100% * %s)', ratio)
