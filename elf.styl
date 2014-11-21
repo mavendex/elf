@@ -13,7 +13,7 @@ debug(color = blue)
 /**
  * Set an element's width and margin-right gutter by ratio.
  * @param {number} [ratio=1] - A width relative to its container as a fraction.
- * @param {number} [_gutter=gutter] - Specify the gutter width as any unit.
+ * @param {string} [_gutter=gutter] - Specify the gutter width as any unit.
  */
 column(ratio = 1, _gutter = gutter)
   float: left
@@ -34,7 +34,7 @@ cycle(item = 0)
  * Offset elements from one another.
  * @param {number} [ratio=0] - Fraction to be used to offset.
  * @param {string} [column-or-span=column] - Are you offsetting a column or a span element?
- * @param {number} [_gutter=gutter] - Specify the gutter width as any unit.
+ * @param {string} [_gutter=gutter] - Specify the gutter width as any unit.
  */
 offset(ratio = 0, column-or-span = column, _gutter = gutter)
   if ratio > 0
@@ -52,7 +52,7 @@ span(ratio = 1)
  * Useful for source ordering. Shift elements to the left and right with positive and negative integers.
  * @param {number} [ratio=0] - Fraction to be used in the shift.
  * @param {string} [column-or-span=column] - Are you shifting a column or a span element?
- * @param {number} [_gutter=gutter] - Specify the gutter width as any unit.
+ * @param {string} [_gutter=gutter] - Specify the gutter width as any unit.
  */
 shift(ratio = 1, column-or-span = column, _gutter = gutter)
   position: relative
