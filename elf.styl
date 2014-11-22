@@ -61,13 +61,16 @@ cycle(item = 0, uncycle = 0, gutter = elf.gutter)
  */
 offset(ratio = 0, column-or-span = column, gutter = elf.gutter)
   if column-or-span is column
-    if ratio > 0
+    if ratio >= 0
       margin-{direction}: s('calc(100% * %s + %s * %s)', ratio, ratio, gutter)
     else
       margin-{opposite}: s('calc(-100% * %s - %s * %s + %s)', ratio, ratio, gutter, gutter)
   else
-    if ratio > 0
+    if ratio >= 0
       margin-{direction}: s('calc(100% * %s)', ratio)
+    else
+      margin-{opposite}: s('calc(-100% * %s)', ratio)
+
 
 /**
  * Set an element's width as a fraction.
