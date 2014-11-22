@@ -1,4 +1,4 @@
-# elf
+<img src="http://corysimmons.github.io/elf/img/elf.svg" height="120px">
 
 #### Installation
 - Copy and paste [elf.styl](elf.styl) to your project
