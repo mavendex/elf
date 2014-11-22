@@ -17,7 +17,9 @@
 - `align(direction = both)`
 - `cf()`
 
-#### Demo
+#### CodePens
+- [Forkable](http://codepen.io/corysimmons/pen/dPParo)
+- [Importable](http://codepen.io/corysimmons/pen/qEEgvW)
 
 #### Browser Support
 - General http://caniuse.com/#search=calc
