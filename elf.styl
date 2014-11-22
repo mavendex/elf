@@ -84,8 +84,22 @@ shift(ratio = 1, column-or-span = column, gutter = elf.gutter)
   {direction}: translate
 
 /**
- * Useful for source ordering. Removes affects applied by shift()
+ * Useful for source ordering. Removes affects applied by shift().
  */
 unshift()
   position: static
   {direction}: 0
+
+/**
+ * Apply a clearfix to an element.
+ */
+cf()
+  *
+    zoom: 1
+
+  &:before, &:after
+    content: ''
+    display: table
+
+  &:after
+    clear: both
