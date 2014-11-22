@@ -91,6 +91,20 @@ unshift()
   {direction}: 0
 
 /**
+ * Apply this mixin to containing elements in order to add flexbox centering to any element.
+ * @param {string} [direction=both] - Accepts 'both', 'vertical', or 'horizontal'.
+ */
+align(direction = both)
+  display: flex
+  if direction is both
+    justify-content: center
+    align-items: center
+  if direction is vertical
+    align-items: center
+  if direction is horizontal
+    justify-content: center
+
+/**
  * Apply a clearfix to an element.
  */
 cf()
