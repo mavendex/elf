@@ -1,5 +1,7 @@
 <img src="http://corysimmons.github.io/elf/img/elf.svg" height="120px">
 
+Prefer [SCSS](https://github.com/jakecleary/elf-scss)?
+
 #### Installation
 - Copy and paste [elf.styl](elf.styl) to your project
 - `@import 'path/to/elf'`
