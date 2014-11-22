@@ -67,6 +67,9 @@ section h2 small {
 #column .block:nth-child(2n) {
   margin-right: 0;
 }
+#column .block:nth-child(0n) {
+  margin-right: 30px;
+}
 @media (min-width: 800px) {
   #column .block {
     float: left;
@@ -78,6 +81,9 @@ section h2 small {
   }
   #column .block:nth-child(3n) {
     margin-right: 0;
+  }
+  #column .block:nth-child(2n) {
+    margin-right: 30px;
   }
 }
 #offset .block {
@@ -120,6 +126,9 @@ section h2 small {
 }
 #shift .block:nth-child(0.5n) {
   margin-right: 0;
+}
+#shift .block:nth-child(0n) {
+  margin-right: 30px;
 }
 #shift .block:nth-child(1) {
   position: relative;

@@ -41,10 +41,14 @@ column(ratio = 1, gutter = elf.gutter)
 /**
  * Make elements automatically drop down a row when the specified item is reached.
  * @param {number} [item=0] - Item to be the last in the row.
+ * @param {string} [uncycle=0] - Cycle to be reset. Useful in media queries.
+ * @param {string} [gutter=elf.gutter] - Specify the gutter width as any unit.
  */
-cycle(item = 0)
+cycle(item = 0, uncycle = 0, gutter = elf.gutter)
   &:nth-child({item}n)
     margin-{opposite}: 0
+  &:nth-child({uncycle}n)
+    margin-{opposite}: gutter
 
 /**
  * Offset elements from one another.

@@ -7,15 +7,15 @@
 #### API
 
 (view [elf.styl](elf.styl) for mixin and parameter descriptions)
-- debug(color = blue)
-- column(ratio = 1, gutter = elf.gutter)
-- cycle(item = 0)
-- offset(ratio = 0, column-or-span = column, gutter = elf.gutter)
-- span(ratio = 1)
-- shift(ratio = 1, column-or-span = column, gutter = elf.gutter)
-- unshift()
-- align(direction = both)
-- cf()
+- `debug(color = blue)`
+- `column(ratio = 1, gutter = elf.gutter)`
+- `cycle(item = 0, uncycle = 0, gutter = elf.gutter)`
+- `offset(ratio = 0, column-or-span = column, gutter = elf.gutter)`
+- `span(ratio = 1)`
+- `shift(ratio = 1, column-or-span = column, gutter = elf.gutter)`
+- `unshift()`
+- `align(direction = both)`
+- `cf()`
 
 #### Demo
 
