@@ -47,10 +47,11 @@ column(ratio = 1, gutter = elf.gutter)
  * @param {string} [gutter=elf.gutter] - Specify the gutter width as any unit.
  */
 cycle(item = 0, uncycle = 0, gutter = elf.gutter)
+  if uncycle > 0
+    &:nth-child({uncycle}n)
+      margin-{opposite}: gutter
   &:nth-child({item}n)
     margin-{opposite}: 0
-  &:nth-child({uncycle}n)
-    margin-{opposite}: gutter
 
 /**
  * Offset elements from one another.
