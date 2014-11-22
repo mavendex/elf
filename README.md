@@ -20,6 +20,7 @@
 #### CodePens
 - [Forkable](http://codepen.io/corysimmons/pen/dPParo)
 - [Importable](http://codepen.io/corysimmons/pen/qEEgvW)
+- [Collection of Examples](http://codepen.io/collection/nLKJkX/)
 
 #### Browser Support
 - General http://caniuse.com/#search=calc
