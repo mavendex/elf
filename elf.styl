@@ -64,7 +64,7 @@ offset(ratio = 0, column-or-span = column, gutter = elf.gutter)
     if ratio >= 0
       margin-{direction}: s('calc(100% * %s + %s * %s)', ratio, ratio, gutter)
     else
-      margin-{opposite}: s('calc(-100% * %s - %s * %s + %s)', ratio, ratio, gutter, gutter)
+      margin-{opposite}: s('calc(-100% * %s - %s * %s)', ratio, ratio, gutter)
   else
     if ratio >= 0
       margin-{direction}: s('calc(100% * %s)', ratio)
