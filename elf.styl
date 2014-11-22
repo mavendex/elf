@@ -60,11 +60,14 @@ cycle(item = 0, uncycle = 0, gutter = elf.gutter)
  * @param {string} [gutter=elf.gutter] - Specify the gutter width as any unit.
  */
 offset(ratio = 0, column-or-span = column, gutter = elf.gutter)
-  if ratio > 0
-    margin-{direction}: s('calc(100% * %s + %s * %s)', ratio, ratio, gutter)
+  if column-or-span is column
+    if ratio > 0
+      margin-{direction}: s('calc(100% * %s + %s * %s)', ratio, ratio, gutter)
+    else
+      margin-{opposite}: s('calc(-100% * %s - %s * %s + %s)', ratio, ratio, gutter, gutter)
   else
-    margin-{opposite}: s('calc(-100% * %s - %s * %s + %s)', ratio, ratio, gutter, gutter)
-
+    if ratio > 0
+      margin-{direction}: s('calc(100% * %s)', ratio)
 
 /**
  * Set an element's width as a fraction.
