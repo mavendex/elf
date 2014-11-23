@@ -1,0 +1,22 @@
+{
+  "name": "elf-grid",
+  "version": "1.0.0",
+  "description": "A small but powerful Stylus grid built with calc()",
+  "main": "elf.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/corysimmons/elf.git"
+  },
+  "keywords": [
+    "stylus",
+    "grid",
+    "responsive",
+    "calc"
+  ],
+  "author": "Cory Simmons",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/corysimmons/elf/issues"
+  },
+  "homepage": "https://github.com/corysimmons/elf"
+}
