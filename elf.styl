@@ -1,4 +1,4 @@
-// v1.2.1
+// v1.3.0
 
 // Settings
 elf = {
@@ -104,10 +104,10 @@ unshift()
   {direction}: 0
 
 /**
- * Apply this mixin to containing elements in order to add flexbox centering to any element.
+ * Apply this mixin to containing elements in order to add flexbox centering to any children elements.
  * @param {string} [direction=both] - Accepts 'both', 'vertical', or 'horizontal'.
  */
-align(direction = both)
+align-children(direction = both)
   display: flex
   if direction is both
     justify-content: center
