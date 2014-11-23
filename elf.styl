@@ -1,4 +1,4 @@
-// v1.1.1
+// v1.2.1
 
 // Settings
 elf = {
@@ -56,11 +56,11 @@ cycle(item = 0, uncycle = 0, gutter = elf.gutter)
 /**
  * Offset elements from one another.
  * @param {number} [ratio=0] - Fraction to be used to offset.
- * @param {string} [column-or-span=column] - Are you offsetting a column or a span element?
+ * @param {bool} [column=true] - Are you offsetting a column or a span element?
  * @param {string} [gutter=elf.gutter] - Specify the gutter width as any unit.
  */
-offset(ratio = 0, column-or-span = column, gutter = elf.gutter)
-  if column-or-span is column
+offset(ratio = 0, column = true, gutter = elf.gutter)
+  if column is true
     if ratio >= 0
       margin-{direction}: s('calc(100% * %s + %s * %s)', ratio, ratio, gutter)
     else
@@ -83,13 +83,13 @@ span(ratio = 1)
 /**
  * Useful for source ordering. Shift elements to the left and right with positive and negative integers.
  * @param {number} [ratio=0] - Fraction to be used in the shift.
- * @param {string} [column-or-span=column] - Are you shifting a column or a span element?
+ * @param {bool} [column=true] - Are you shifting a column or a span element?
  * @param {string} [gutter=elf.gutter] - Specify the gutter width as any unit.
  */
-shift(ratio = 1, column-or-span = column, gutter = elf.gutter)
+shift(ratio = 1, column = true, gutter = elf.gutter)
   position: relative
 
-  if column-or-span is column
+  if column is true
     translate = s('calc(100% * %s + %s * %s)', ratio, ratio, gutter)
   else
     translate = s('calc(100% * %s)', ratio)
