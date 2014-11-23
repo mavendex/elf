@@ -30,7 +30,6 @@
 - `shift(ratio = 1, column-or-span = column, gutter = elf.gutter)`
 - `unshift()`
 - `align(direction = both)`
-- `cf()`
 
 #### Browser Support
 - General http://caniuse.com/#search=calc
