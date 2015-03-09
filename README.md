@@ -2,6 +2,8 @@
 
 **Prefer [SCSS](https://github.com/jakecleary/elf-scss)?**
 
+# Elf is now deprecated. Please use https://github.com/corysimmons/lost instead.
+
 ### Features
 - Unlimited nesting with consistently sized gutters.
 - Nesting **without** parent contexts. For instance in Jeet you have to write `column(1/3 1/2)` where `1/2` is the size of the containing element. All ratio grid systems aside from Elf suffer from this in some form or fashion.
